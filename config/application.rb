@@ -6,6 +6,12 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
+Mime::Type.register "application/x-ms-application", :application
+Mime::Type.register "application/x-ms-manifest", :manifest
+Mime::Type.register "application/octet-stream", :deploy
+Mime::Type.register "application/octet-stream", :msu
+Mime::Type.register "application/octet-stream", :msp
+
 module HerokuClickOnceTest
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
